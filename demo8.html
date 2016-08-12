@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo8</title>
+    <script src="./bower_components/react/react.min.js"></script>
+    <script src="./bower_components/react/react-dom.min.js"></script>
+    <script src="./bower_components/babel/browser.min.js"></script>
+</head>
+<body>
+<div id="state"></div>
+<script type="text/babel">
+    let StartButton = React.createClass({
+        getInitialState: function () {
+            return {isStart: false};
+        },
+
+        handleClick: function (event) {
+            this.setState({isStart: !this.state.isStart});
+        },
+
+        render: function () {
+            let text = this.state.isStart ? 'start' : 'haven\'t start';
+            return (
+                    <p onClick={this.handleClick}>
+                        You {text} this. Click to toggle.
+                    </p>
+            );
+        }
+    });
+
+    ReactDOM.render(
+            <StartButton/>,
+            document.getElementById("state")
+    );
+</script>
+</body>
+</html>

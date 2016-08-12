@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo4</title>
+    <script src="./bower_components/react/react.min.js"></script>
+    <script src="./bower_components/react/react-dom.min.js"></script>
+    <script src="./bower_components/babel/browser.min.js"></script>
+</head>
+<body>
+<div id="hello4"></div>
+<script type="text/babel">
+    let HelloMessage = React.createClass({
+        render: function () {
+            return <h2>hello, {this.props.name}</h2>
+        }
+    });
+
+    ReactDOM.render(
+            <HelloMessage name="Mark"/>,
+            document.getElementById("hello4")
+    );
+</script>
+</body>
+</html>

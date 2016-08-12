@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo10</title>
+    <script src="./bower_components/react/react.min.js"></script>
+    <script src="./bower_components/react/react-dom.min.js"></script>
+    <script src="./bower_components/babel/browser.min.js"></script>
+</head>
+<body>
+<div id="lifecycle"></div>
+<script type="text/babel">
+    let Hello = React.createClass({
+        getInitialState: function () {
+            return {
+                opacity: 1.0
+            };
+        },
+//异步编程中的.bind(this)方法解决了异步执行后this指针指向全局函数的问题;
+//React中使用setInterval()来渐变字体颜色;
+        componentDidMount: function () {
+            this.timer = setInterval(function () {
+                let opacity = this.state.opacity;
+                opacity -= 0.05;
+                if (opacity < 0.1) {
+                    opacity = 1.0;
+                }
+                this.setState({
+                    opacity: opacity
+                });
+            }.bind(this), 100);
+        },
+/*注意setinterval()方法中，回调函数一定要加.bind(this)方法，
+原因是：在setInterval()中定义的回调函数，是在同步代码执行完后，随着事件触发来异步执行的，
+此时函数的上下文Context已经由定义该函数的Script文件变为全局变量，
+如果不通过bind(this)来指定由组件实例作为上下文的话，回调函数中的this会指向全局变量中的Window变量.*/
+        render: function () {
+            return (
+                    <div style={{opacity: this.state.opacity}}>
+                        hello {this.props.name}
+                    </div>
+            );
+        }
+    });
+
+    ReactDOM.render(
+            <Hello name="Kate"/>,
+            document.getElementById("lifecycle")
+    );
+</script>
+</body>
+</html>

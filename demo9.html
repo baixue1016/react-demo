@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo9</title>
+    <script src="./bower_components/react/react.min.js"></script>
+    <script src="./bower_components/react/react-dom.min.js"></script>
+    <script src="./bower_components/babel/browser.min.js"></script>
+</head>
+<body>
+<div id="table-value"></div>
+<script type="text/babel">
+    let Input = React.createClass({
+        getInitialState: function () {
+            return {value: 'hello'};
+        },
+
+        handleChange: function (event) {
+            this.setState({value: event.target.value});
+        },
+
+        render: function () {
+            var value = this.state.value;
+            return (
+                    <div>
+                        <input type="text" value={value} onChange={this.handleChange}/>
+                        <p>{value}</p>
+                    </div>
+            );
+        }
+    });
+
+    ReactDOM.render(
+            <Input/>,
+            document.getElementById("table-value")
+//            document.body
+    );
+</script>
+</body>
+</html>

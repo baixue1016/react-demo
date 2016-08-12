@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo3</title>
+    <script src="./bower_components/react/react.min.js"></script>
+    <script src="./bower_components/react/react-dom.min.js"></script>
+    <script src="./bower_components/babel/browser.min.js"></script>
+</head>
+<body>
+<div id="hello3"></div>
+<script type="text/babel">
+    let hello = [
+        <h1>hello, MarK!</h1>,
+        <h2>hello, LiMing!</h2>,
+        <h3>hello, Kate!</h3>
+    ];
+
+    ReactDOM.render(
+            <div>{hello}</div>,
+            document.getElementById("hello3")
+    )
+</script>
+</body>
+</html>

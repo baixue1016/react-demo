@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo2</title>
+    <script src="./bower_components/react/react.min.js"></script>
+    <script src="./bower_components/react/react-dom.min.js"></script>
+    <script src="./bower_components/babel/browser.min.js"></script>
+</head>
+<body>
+<div id="hello2"></div>
+<script type="text/babel">
+    let names = ["MarK", "LiMing", "Kate"];
+    ReactDOM.render(
+            <div>{
+                names.map(name=> <div>hello, {name}!</div>)
+            }</div>,
+            document.getElementById("hello2")
+    );
+</script>
+</body>
+</html>

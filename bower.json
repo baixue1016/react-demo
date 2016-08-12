@@ -1,0 +1,21 @@
+{
+  "name": "react-demo",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "baixue1016 <1773158403@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/baixue1016/getOddSquareSum",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "babel": "^5.8.38",
+    "react": "^15.3.0"
+  }
+}
